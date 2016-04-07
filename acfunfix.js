@@ -25,7 +25,7 @@
  		player.outerHTML = '<object style="visibility:visible;width:100%;height:100%" id="not-ACFlashPlayer-re" data="' + d + '" src="' + d + '" allowscriptaccess="always" allowfullscreen="true" allowfullscreeninteractive="true" type="application/x-shockwave-flash"><param value="true" name="allowFullscreenInteractive"><param value="true" name="allowfullscreen"><param value="always" name="allowscriptaccess"><param value="' + e + '" name="flashvars"><param name=movie value="' + d + '"></object>'
  	};
  	if (!document.getElementById("video-download") && b != "iqiyi" && b != "pps") {
- 		$("#txt-title-view").append('<span id="video-download"><a class="btn primary" href="http://hihi427.github.io/web/acfun_danmu.html?vid='+$("a.active.primary").data("vid")+'&p='+(location.href.match(/_(\d+)/)?location.href.match(/_(\d+)/)[1]:"1")+'" title="视频下载" style="float:none;color:#fff;margin-left:8px;" target="_blank"><i class="icon icon-download"></i>详细信息及下载</a></span>')
+ 		$("#txt-title-view").append('<span id="video-download"><a class="btn primary" href="http://www.talkshowcn.com/page/acfun_danmu.html?vid='+$("a.active.primary").data("vid")+'&p='+(location.href.match(/_(\d+)/)?location.href.match(/_(\d+)/)[1]:"1")+'" title="视频下载" style="float:none;color:#fff;margin-left:8px;" target="_blank"><i class="icon icon-download"></i>详细信息及下载</a></span>')
  	}
  	if (b == "youku2") {
  		b = "youku"
@@ -60,9 +60,13 @@
 		});
 	};
  	if (b != "letv" && b != "zhuzhan") {
+		if(b == "iqiyi"||b == "pps"){
+			$.info("由于一些版权方面的原因，爱奇艺源停止替换播放器。请各位理解。");
+		}else{
 			c("http://static.skydust.net/private/acfun/AcPlayer201412121_D.swf", "oldcs=1&host=http://www.talkshowcn.com&vid=" + $("a.active.primary").data("vid") + "|" + b + "|" + $("a.active.primary").data("sid"));
 			$("#video-download").append('<a class="btn primary" onclick="$(_getPlayer()).prop(\'outerHTML\',$(_getPlayer()).prop(\'outerHTML\').replace(/acfun.tv/,\'talkshowcn.com\'))" style="float:none;color:#fff;margin-left:8px;" target="_blank"><i class="icon icon-refresh"></i>若解析失败点这儿刷新几次</a>');
 			$.info("视频源类型：" + sourceList[b]);
+		}
  	}else{
 		$.info("乐视云源本程序不会进行任何处理，出现问题是 AcFun 的问题，请联系客服。");
 	}
