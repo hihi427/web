@@ -8,8 +8,6 @@
  		return
  	}
  	if (document.domain.toLowerCase().indexOf("acfun.tv") < 0 && document.domain.toLowerCase().indexOf("tudou.com") < 0) {
- 		alert (document.domain.toLowerCase().indexOf("acfun.tv"));
- 		alert (document.domain.toLowerCase().indexOf("tudou.com"));
  		alert("进AcFun再说...");
  		return
  	}
