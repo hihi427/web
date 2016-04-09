@@ -7,7 +7,7 @@
  		alert("你应该是加到收藏夹或者拖到书签栏，而不是点我");
  		return
  	}
- 	if (document.domain.toLowerCase().indexOf("acfun.tv") < 0 || document.domain.toLowerCase().indexOf("bilibili.com") < 0) {
+ 	if (document.domain.toLowerCase().indexOf("acfun.tv") < 0 || document.domain.toLowerCase().indexOf("tudou.com") < 0) {
  		alert("进AcFun再说...");
  		return
  	}
